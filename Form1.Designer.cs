@@ -148,13 +148,14 @@
             // 
             // btnGiris
             // 
+            this.btnGiris.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGiris.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGiris.Location = new System.Drawing.Point(3, 3);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(437, 49);
             this.btnGiris.TabIndex = 0;
             this.btnGiris.Text = "GİRİŞ YAP";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel4
@@ -185,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.Violet;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(443, 531);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);

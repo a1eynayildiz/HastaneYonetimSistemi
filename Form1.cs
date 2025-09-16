@@ -44,9 +44,20 @@ namespace hastaTakipSistemi
                 SqlDataReader dr = giris.ExecuteReader();
                 if (dr.Read())
                 {
+                    MessageBox.Show("Giriş Başarılı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
+                    frmAnaSayfa fr = new frmAnaSayfa();
+                    
+                    this.Hide();
+                    fr.Show();
+
+
                 }
-               
+                else
+                {
+                    MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             else
             {   MessageBox.Show("Lütfen Tüm Alanları Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error); 

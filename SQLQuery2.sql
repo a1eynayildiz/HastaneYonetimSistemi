@@ -7,3 +7,5 @@ BEGIN
     INSERT INTO tbl_Login (kulAdi, sifre)
     VALUES (@kulAdi, @sifre);
 END
+
+SELECT * FROM tbl_Login
