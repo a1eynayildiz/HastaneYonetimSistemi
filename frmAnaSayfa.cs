@@ -26,6 +26,7 @@ namespace hastaTakipSistemi
         private void frmAnaSayfa_Load(object sender, EventArgs e)
         {
             Listele();
+            durumDoldur();
         }
 
         private void Listele()
@@ -35,6 +36,19 @@ namespace hastaTakipSistemi
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+        }
+        private void durumDoldur()
+        {
+            SqlCommand durum = new SqlCommand("durumDoldur",bgl.baglan());
+            SqlDataAdapter da = new SqlDataAdapter(durum);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtDurum.DataSource = dt;
+            txtDurum.DisplayMember = "durumAd";
+            txtDurum.ValueMember = "durumID";
+
+            
 
         }
 
