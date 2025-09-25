@@ -27,6 +27,7 @@ namespace hastaTakipSistemi
         {
             Listele();
             durumDoldur();
+            bolumDoldur();
         }
 
         private void Listele()
@@ -47,10 +48,24 @@ namespace hastaTakipSistemi
             txtDurum.DataSource = dt;
             txtDurum.DisplayMember = "durumAd";
             txtDurum.ValueMember = "durumID";
-
-            
-
         }
+
+        private void bolumDoldur()
+        {
+            SqlCommand bolum = new SqlCommand("bolumDoldur", bgl.baglan());
+            SqlDataAdapter da = new SqlDataAdapter(bolum);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtBolum.DataSource = dt;
+            txtBolum.DisplayMember = "bolumAd";
+            txtBolum.ValueMember = "bolumID";
+        }
+
+
+
+
+
+
 
         private void btnListele_Click(object sender, EventArgs e)
         {
