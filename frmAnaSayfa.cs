@@ -71,5 +71,51 @@ namespace hastaTakipSistemi
         {
             Listele();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView1.SelectedCells[0].RowIndex;
+            txtID.Text = dataGridView1.Rows[secilen].Cells[11].Value.ToString();
+            txtAd.Text = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
+            txtSoyad.Text = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
+            txtTc.Text = dataGridView1.Rows[secilen].Cells[2].Value.ToString();
+            txtTelefon.Text = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
+            txtYas.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
+            txtCinsiyet.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
+            txtSikayet.Text = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
+            txtTarih.Text = dataGridView1.Rows[secilen].Cells[7].Value.ToString();
+            txtDurum.SelectedValue = dataGridView1.Rows[secilen].Cells[8].Value.ToString();
+            txtBolum.SelectedValue = dataGridView1.Rows[secilen].Cells[9].Value.ToString();
+            lblEx.Text = dataGridView1.Rows[secilen].Cells[10].Value.ToString();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rbEvet_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEvet.Checked == true)
+            {
+                lblEx.Text = "True";
+            }
+            else
+            {
+                lblEx.Text = "False";
+            }
+        }
+
+        private void lblEx_TextChanged(object sender, EventArgs e)
+        {
+            if(lblEx.Text == "True")
+            {
+                rbEvet.Checked = true;
+            }
+            else
+            {
+                rbHayir.Checked = true;
+            }
+        }
     }
 }
