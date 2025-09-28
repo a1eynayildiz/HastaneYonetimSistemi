@@ -32,6 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblEx = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtYas = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
-            this.lblEx = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -150,6 +150,19 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1782, 79);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            // 
+            // lblEx
+            // 
+            this.lblEx.AutoSize = true;
+            this.lblEx.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEx.Location = new System.Drawing.Point(1483, 38);
+            this.lblEx.Name = "lblEx";
+            this.lblEx.Size = new System.Drawing.Size(142, 41);
+            this.lblEx.TabIndex = 26;
+            this.lblEx.Text = "Hasta Yaşı";
+            this.lblEx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEx.Visible = false;
+            this.lblEx.TextChanged += new System.EventHandler(this.lblEx_TextChanged);
             // 
             // label11
             // 
@@ -519,6 +532,7 @@
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnListele
             // 
@@ -532,19 +546,6 @@
             this.btnListele.Text = "LİSTELE";
             this.btnListele.UseVisualStyleBackColor = true;
             this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
-            // 
-            // lblEx
-            // 
-            this.lblEx.AutoSize = true;
-            this.lblEx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEx.Location = new System.Drawing.Point(1483, 38);
-            this.lblEx.Name = "lblEx";
-            this.lblEx.Size = new System.Drawing.Size(142, 41);
-            this.lblEx.TabIndex = 26;
-            this.lblEx.Text = "Hasta Yaşı";
-            this.lblEx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEx.Visible = false;
-            this.lblEx.TextChanged += new System.EventHandler(this.lblEx_TextChanged);
             // 
             // frmAnaSayfa
             // 

@@ -117,5 +117,42 @@ namespace hastaTakipSistemi
                 rbHayir.Checked = true;
             }
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtAd.Text != "" && txtBolum.Text != "" && txtCinsiyet.Text != "" && txtDurum.Text != "" && txtSikayet.Text != "" && txtSoyad.Text != "" && txtTc.Text != "" && txtTelefon.Text != "" && txtYas.Text != "")
+            {
+                kaydet();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen boş alan bırakmayınız!", "Kayıt Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void kaydet()
+        {
+            SqlCommand kaydet = new SqlCommand("kaydet", bgl.baglan());
+            kaydet.CommandType = CommandType.StoredProcedure;
+            kaydet.Parameters.AddWithValue("ad", txtAd.Text.ToString());
+            kaydet.Parameters.AddWithValue("soyad", txtSoyad.Text.ToString());
+            kaydet.Parameters.AddWithValue("tc", txtTc.Text).ToString();
+            kaydet.Parameters.AddWithValue("tel", txtTelefon.Text.ToString());
+            kaydet.Parameters.AddWithValue("yas",int.Parse(txtYas.Text.ToString()));
+            kaydet.Parameters.AddWithValue("cins", txtCinsiyet.Text.ToString());
+            kaydet.Parameters.AddWithValue("sikayet", txtSikayet.Text.ToString());
+            kaydet.Parameters.AddWithValue("tarih", DateTime.Now);
+            kaydet.Parameters.AddWithValue("durum", txtDurum.SelectedValue);
+            kaydet.Parameters.AddWithValue("bolum", txtBolum.SelectedValue);
+            if(lblEx.Text=="True")
+            {
+                kaydet.Parameters.AddWithValue("ex", 1);
+            }
+            else
+            {
+                kaydet.Parameters.AddWithValue("ex", 0);
+            }
+            kaydet.ExecuteNonQuery();
+            MessageBox.Show("Kayıt başarıyla eklendi!", "Kayıt Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
