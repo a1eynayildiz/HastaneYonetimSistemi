@@ -170,6 +170,7 @@ namespace hastaTakipSistemi
                 sil.Parameters.AddWithValue("id", int.Parse(txtID.Text));
                 sil.ExecuteNonQuery();//SQL Komutunu çalıştırmak veya saklı yordamı INSERT, UPDATE veya Delete işlemlerini gerçekleştirmek için kullanılır. 
                 MessageBox.Show("Kayıt başarıyla silindi!", "Kayıt Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listele();
             }
             
             
