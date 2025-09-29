@@ -249,6 +249,7 @@
             // txtTarih
             // 
             this.txtTarih.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTarih.Enabled = false;
             this.txtTarih.Location = new System.Drawing.Point(1631, 3);
             this.txtTarih.Multiline = true;
             this.txtTarih.Name = "txtTarih";
@@ -520,6 +521,7 @@
             this.btnSil.TabIndex = 3;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 

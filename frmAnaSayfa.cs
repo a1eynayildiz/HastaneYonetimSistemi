@@ -154,5 +154,25 @@ namespace hastaTakipSistemi
             kaydet.ExecuteNonQuery();
             MessageBox.Show("Kayıt başarıyla eklendi!", "Kayıt Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            sil();
+        }
+
+        private void sil()
+        {
+            DialogResult dr = MessageBox.Show($"{txtID.Text} numaralı kayıt silinecek.Onaylıyor musunuz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                SqlCommand sil = new SqlCommand("sil", bgl.baglan());
+                sil.CommandType = CommandType.StoredProcedure;
+                sil.Parameters.AddWithValue("id", int.Parse(txtID.Text));
+                sil.ExecuteNonQuery();//SQL Komutunu çalıştırmak veya saklı yordamı INSERT, UPDATE veya Delete işlemlerini gerçekleştirmek için kullanılır. 
+                MessageBox.Show("Kayıt başarıyla silindi!", "Kayıt Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            
+        }
     }
 }
