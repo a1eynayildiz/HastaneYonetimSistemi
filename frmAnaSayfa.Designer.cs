@@ -408,17 +408,19 @@
             // rbHayir
             // 
             this.rbHayir.AutoSize = true;
+            this.rbHayir.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.rbHayir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbHayir.Location = new System.Drawing.Point(1191, 3);
             this.rbHayir.Name = "rbHayir";
             this.rbHayir.Size = new System.Drawing.Size(588, 45);
             this.rbHayir.TabIndex = 15;
             this.rbHayir.Text = "HAYIR";
-            this.rbHayir.UseVisualStyleBackColor = true;
+            this.rbHayir.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
@@ -430,18 +432,20 @@
             // rbEvet
             // 
             this.rbEvet.AutoSize = true;
+            this.rbEvet.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.rbEvet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbEvet.Location = new System.Drawing.Point(597, 3);
             this.rbEvet.Name = "rbEvet";
             this.rbEvet.Size = new System.Drawing.Size(588, 45);
             this.rbEvet.TabIndex = 14;
             this.rbEvet.Text = "EVET";
-            this.rbEvet.UseVisualStyleBackColor = true;
+            this.rbEvet.UseVisualStyleBackColor = false;
             this.rbEvet.CheckedChanged += new System.EventHandler(this.rbEvet_CheckedChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkCyan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 145);
