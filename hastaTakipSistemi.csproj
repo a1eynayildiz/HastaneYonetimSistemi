@@ -58,6 +58,12 @@
     <Compile Include="frmAnaSayfa.Designer.cs">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIstatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstatistic.Designer.cs">
+      <DependentUpon>frmIstatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKayit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnaSayfa.resx">
       <DependentUpon>frmAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstatistic.resx">
+      <DependentUpon>frmIstatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKayit.resx">
       <DependentUpon>frmKayit.cs</DependentUpon>

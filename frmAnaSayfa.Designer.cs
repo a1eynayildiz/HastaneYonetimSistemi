@@ -485,6 +485,7 @@
             this.btnIstatistic.TabIndex = 6;
             this.btnIstatistic.Text = "İSTATİSTİKLER";
             this.btnIstatistic.UseVisualStyleBackColor = true;
+            this.btnIstatistic.Click += new System.EventHandler(this.btnIstatistic_Click);
             // 
             // btnFormuTemizle
             // 
@@ -497,6 +498,7 @@
             this.btnFormuTemizle.TabIndex = 5;
             this.btnFormuTemizle.Text = "FORMU TEMİZLE";
             this.btnFormuTemizle.UseVisualStyleBackColor = true;
+            this.btnFormuTemizle.Click += new System.EventHandler(this.btnFormuTemizle_Click);
             // 
             // btnGuncelle
             // 
@@ -509,6 +511,7 @@
             this.btnGuncelle.TabIndex = 4;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 

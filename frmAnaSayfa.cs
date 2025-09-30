@@ -41,7 +41,7 @@ namespace hastaTakipSistemi
         }
         private void durumDoldur()
         {
-            SqlCommand durum = new SqlCommand("durumDoldur",bgl.baglan());
+            SqlCommand durum = new SqlCommand("durumDoldur", bgl.baglan());
             SqlDataAdapter da = new SqlDataAdapter(durum);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -108,7 +108,7 @@ namespace hastaTakipSistemi
 
         private void lblEx_TextChanged(object sender, EventArgs e)
         {
-            if(lblEx.Text == "True")
+            if (lblEx.Text == "True")
             {
                 rbEvet.Checked = true;
             }
@@ -137,13 +137,13 @@ namespace hastaTakipSistemi
             kaydet.Parameters.AddWithValue("soyad", txtSoyad.Text.ToString());
             kaydet.Parameters.AddWithValue("tc", txtTc.Text).ToString();
             kaydet.Parameters.AddWithValue("tel", txtTelefon.Text.ToString());
-            kaydet.Parameters.AddWithValue("yas",int.Parse(txtYas.Text.ToString()));
+            kaydet.Parameters.AddWithValue("yas", int.Parse(txtYas.Text.ToString()));
             kaydet.Parameters.AddWithValue("cins", txtCinsiyet.Text.ToString());
             kaydet.Parameters.AddWithValue("sikayet", txtSikayet.Text.ToString());
             kaydet.Parameters.AddWithValue("tarih", DateTime.Now);
             kaydet.Parameters.AddWithValue("durum", txtDurum.SelectedValue);
             kaydet.Parameters.AddWithValue("bolum", txtBolum.SelectedValue);
-            if(lblEx.Text=="True")
+            if (lblEx.Text == "True")
             {
                 kaydet.Parameters.AddWithValue("ex", 1);
             }
@@ -172,8 +172,72 @@ namespace hastaTakipSistemi
                 MessageBox.Show("Kayıt başarıyla silindi!", "Kayıt Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Listele();
             }
-            
-            
+
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show($"{txtID.Text} numaralı kayıt güncellenecek.Onaylıyor musunuz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            guncelle();
+
+            if (dr == DialogResult.Yes)
+            {
+                guncelle();
+                Listele();
+            }
+        }
+        private void guncelle()
+        {
+            SqlCommand guncelle = new SqlCommand("guncelle", bgl.baglan());
+            guncelle.CommandType = CommandType.StoredProcedure;
+            guncelle.Parameters.AddWithValue("id", int.Parse(txtID.Text));
+            guncelle.Parameters.AddWithValue("ad", txtAd.Text.ToString());
+            guncelle.Parameters.AddWithValue("soyad", txtSoyad.Text.ToString());
+            guncelle.Parameters.AddWithValue("tc", txtTc.Text).ToString();
+            guncelle.Parameters.AddWithValue("tel", txtTelefon.Text.ToString());
+            guncelle.Parameters.AddWithValue("yas", int.Parse(txtYas.Text.ToString()));
+            guncelle.Parameters.AddWithValue("cins", txtCinsiyet.Text.ToString());
+            guncelle.Parameters.AddWithValue("sikayet", txtSikayet.Text.ToString());
+            guncelle.Parameters.AddWithValue("tarih", DateTime.Now);
+            guncelle.Parameters.AddWithValue("durum", txtDurum.SelectedValue);
+            guncelle.Parameters.AddWithValue("bolum", txtBolum.SelectedValue);
+            if (lblEx.Text == "True")
+            {
+                guncelle.Parameters.AddWithValue("ex", 1);
+            }
+            else
+            {
+                guncelle.Parameters.AddWithValue("ex", 0);
+            }
+            guncelle.ExecuteNonQuery();
+            MessageBox.Show("Güncellemeler başarıyla eklendi!", "Güncelleme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void temizle()
+        {
+            txtAd.Text = "";
+            txtBolum.Text = "";
+            txtCinsiyet.Text = "";
+            txtDurum.Text = "";
+            txtID.Text = "";
+            txtSikayet.Text = "";
+            txtSoyad.Text = "";
+            txtTarih.Text = "";
+            txtTc.Text = "";
+            txtTelefon.Text = "";
+            txtYas.Text = "";
+            rbHayir.Checked = true;
+            lblEx.Text = "False";
+        }
+        private void btnFormuTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
+        }
+
+        private void btnIstatistic_Click(object sender, EventArgs e)
+        {
+            frmIstatistic fr = new frmIstatistic();
+            fr.Show();
         }
     }
 }
