@@ -30,6 +30,7 @@ namespace hastaTakipSistemi
             yasOrtalama();
             erkekSayi();
             kadinSayi();
+            toplamExSayisi();
         }
         private void toplamHasta()
         {
@@ -70,6 +71,17 @@ namespace hastaTakipSistemi
             while (dr.Read())
             {
                 lblKadinSayi.Text = dr[0].ToString();
+            }
+        }
+
+        private void toplamExSayisi()
+        {
+            SqlCommand ExSayi = new SqlCommand("SELECT COUNT(*) FROM tbl_HastaBilgi where hExMi = 1", bgl.baglan());
+            ExSayi.ExecuteNonQuery();
+            SqlDataReader dr = ExSayi.ExecuteReader();
+            while (dr.Read())
+            {
+                lblExSayi.Text = dr[0].ToString();
             }
         }
 
