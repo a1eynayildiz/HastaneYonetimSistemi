@@ -27,6 +27,8 @@ namespace hastaTakipSistemi
         private void frmIstatistic_Load(object sender, EventArgs e)
         {
             toplamHasta();
+            yasOrtalama();
+            erkekSayi();
         }
         private void toplamHasta()
         {
@@ -38,5 +40,29 @@ namespace hastaTakipSistemi
                 lblToplamHasta.Text = dr[0].ToString();
             }
         }
+        private void yasOrtalama()
+        {
+            SqlCommand ortalama = new SqlCommand("select AVG(hYas) from tbl_HastaBilgi", bgl.baglan());
+            ortalama.ExecuteNonQuery();
+            SqlDataReader dr = ortalama.ExecuteReader();
+            while (dr.Read())
+            {
+                lblYasOrtalama.Text = dr[0].ToString();
+            }
+        }
+        private void erkekSayi()
+        {
+            SqlCommand erkekSayi = new SqlCommand("SELECT COUNT(*) FROM tbl_HastaBilgi where hCinsiyet = 'Erkek'", bgl.baglan());
+            erkekSayi.ExecuteNonQuery();
+            SqlDataReader dr = erkekSayi.ExecuteReader();
+            while (dr.Read())
+            {
+                lblErkekSayi.Text = dr[0].ToString();
+            }
+        }
+        
+
+
+
     }
 }
