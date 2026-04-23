@@ -22,6 +22,7 @@ namespace hastaTakipSistemi
                 kayit.Parameters.AddWithValue("@sifre", txtSifre.Text);
                 kayit.ExecuteNonQuery();
                 MessageBox.Show("Kayıt Başarılı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             else
             {
